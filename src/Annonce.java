@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class Annonce {
     private String reference;
     private String date;
@@ -25,7 +27,12 @@ public class Annonce {
 
     @Override
     public String toString(){
-        return titre +"\n " + "Annonce " + reference + " du " +date+ "\n Appartement "+logement.toString() ;
+        DecimalFormat numberFormat = new DecimalFormat("#.00&");
+        return titre +"\n " + "Annonce " + reference + " du " +date+ "\n Appartement "+logement.toString() + "\n"
+        + "- Prix du m2 habitable : "+ prixM2Habitable+" euros\n" 
+        + "- Prix du m2 non habitable : "+ prixM2Habitable*COEF_NON_HABITABLE+" euros"
+        + "\nValeur du bien : " + numberFormat.format(prix()) + "\n"
+        + "Contact :" + logement.getVendeur().getEmail() + " / " + logement.getVendeur().getNumeroTelephone();
     }
     
 }
