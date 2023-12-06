@@ -42,7 +42,7 @@ public class Appartement extends BienImmobilier{
         if(ascenseur){
             resultat += " avec ascenseur ";
         }
-        resultat += " situé au " + etage + " ";
+        resultat += " situé au " + etage + " " + "hamlaoui";
         resultat += super.toString();
         return resultat;
     }
